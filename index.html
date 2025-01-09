@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cyberpunk 2077</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Add Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Rajdhani:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Custom CSS for blur effect on navbar */
+      .nav-blur {
+        backdrop-filter: blur(10px);
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      /* Glow effect on hover */
+      .glow-on-hover {
+        transition: text-shadow 0.3s ease, transform 0.3s ease;
+      }
+      .glow-on-hover:hover {
+        text-shadow: 0 0 10px #60a5fa, 0 0 20px #60a5fa, 0 0 30px #60a5fa;
+        transform: scale(1.05);
+      }
+
+      /* Futuristic button hover effect */
+      .futuristic-button {
+        background: linear-gradient(45deg, #60a5fa, #9333ea);
+        border: 2px solid #60a5fa;
+        transition: all 0.3s ease;
+      }
+      .futuristic-button:hover {
+        background: linear-gradient(45deg, #9333ea, #60a5fa);
+        box-shadow: 0 0 15px #60a5fa, 0 0 30px #9333ea;
+        transform: translateY(-2px);
+      }
+
+      /* Neon border effect */
+      .neon-border {
+        border: 2px solid transparent;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      }
+      .neon-border:hover {
+        border-color: #60a5fa;
+        box-shadow: 0 0 10px #60a5fa, 0 0 20px #60a5fa;
+      }
+
+      /* Apply custom fonts */
+      body {
+        font-family: 'Rajdhani', sans-serif;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Orbitron', sans-serif;
+      }
+
+      /* Bigger titles */
+      .big-title {
+        font-size: 4rem; /* Adjust size as needed */
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+
+      /* Glitch effect on hover */
+      .glitch-on-hover {
+        position: relative;
+        display: inline-block;
+      }
+
+      .glitch-on-hover:hover::before,
+      .glitch-on-hover:hover::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.8;
+      }
+
+      .glitch-on-hover:hover::before {
+        color: #60a5fa;
+        animation: glitch 0.3s infinite;
+      }
+
+      .glitch-on-hover:hover::after {
+        color: #9333ea;
+        animation: glitch 0.3s infinite reverse;
+      }
+
+      @keyframes glitch {
+        0% {
+          transform: translate(0);
+        }
+        20% {
+          transform: translate(-2px, 2px);
+        }
+        40% {
+          transform: translate(-2px, -2px);
+        }
+        60% {
+          transform: translate(2px, 2px);
+        }
+        80% {
+          transform: translate(2px, -2px);
+        }
+        100% {
+          transform: translate(0);
+        }
+      }
+
+      /* 3D Card Effect */
+      .card-3d {
+        transform-style: preserve-3d;
+        transition: transform 0.5s ease, box-shadow 0.5s ease;
+        perspective: 1000px;
+      }
+
+      .card-3d:hover {
+        transform: rotateY(10deg) rotateX(10deg) translateY(-10px);
+        box-shadow: 0 20px 40px rgba(96, 165, 250, 0.3);
+      }
+
+      .card-3d::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(45deg, rgba(96, 165, 250, 0.1), rgba(147, 51, 234, 0.1));
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+
+      .card-3d:hover::before {
+        opacity: 1;
+      }
+    </style>
+  </head>
+
+  <body class="bg-black text-white">
+    <div class="main w-full">
+      <!-- Navigation Bar -->
+      <nav
+        id="navbar"
+        class="w-full fixed top-0 left-0 px-10 py-3 flex justify-between items-center z-50 transition-all duration-300"
+      >
+        <img
+          class="w-[160px] mix-blend-screen filter saturate-150 contrast-125"
+          src="https://i.redd.it/3d-rendered-the-cyberpunk-logo-using-blender-v0-khopj82wqee91.png?width=1920&format=png&auto=webp&s=f42dbd8f5c04aedb9ba9291c1ba4d679029cc1f3"
+          alt="Cyberpunk 2077"
+        />
+        <div class="flex gap-5 items-center">
+          <a
+            href="#"
+            class="tracking-tight text-white hover:text-blue-400 glow-on-hover"
+            >Games</a
+          >
+          <a
+            href="#"
+            class="tracking-tight text-white hover:text-blue-400 glow-on-hover"
+            >News</a
+          >
+          <a
+            href="#"
+            class="tracking-tight text-white hover:text-blue-400 glow-on-hover"
+            >Community</a
+          >
+          <a
+            href="#"
+            class="tracking-tight text-white hover:text-blue-400 glow-on-hover"
+            >Shop</a
+          >
+          <a
+            href="#"
+            class="tracking-tight text-white hover:text-blue-400 glow-on-hover"
+            >Support</a
+          >
+        </div>
+      </nav>
+
+      <!-- Hero Section -->
+      <div class="w-full h-[150vh] overflow-hidden relative">
+        <img
+          class="absolute w-3/4 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mix-blend-screen filter saturate-150 contrast-125"
+          src="https://i.redd.it/3d-rendered-the-cyberpunk-logo-using-blender-v0-khopj82wqee91.png?width=1920&format=png&auto=webp&s=f42dbd8f5c04aedb9ba9291c1ba4d679029cc1f3"
+          alt="Cyberpunk 2077"
+        />
+        <div
+          class="w-[30rem] h-[30rem] top-1/2 left-1/2 z-[-1] -translate-x-1/2 -translate-y-1/2 absolute rounded-full bg-blue-800 blur-[90px]"
+        ></div>
+        <canvas id="canvas"></canvas>
+      </div>
+
+      <!-- Featured Game Section -->
+      <section class="w-full py-20 px-10 bg-black">
+        <h2 class="text-center mb-10">
+          <span
+            class="big-title glitch-on-hover"
+            data-text="Featured Game"
+            >Featured Game</span
+          >
+        </h2>
+        <div class="flex justify-center items-center gap-10">
+          <img
+            class="w-1/2 rounded-lg shadow-lg neon-border"
+            src="https://www.cyberpunk.net/build/images/social-thumbnail-en-ddcf4d23.jpg"
+            alt="Cyberpunk 2077 Gameplay"
+          />
+          <div class="w-1/2">
+            <h3 class="text-3xl font-bold mb-5">
+              <span
+                class="big-title glitch-on-hover"
+                data-text="Cyberpunk 2077"
+                >Cyberpunk 2077</span
+              >
+            </h3>
+            <p class="text-lg mb-5">
+              Cyberpunk 2077 is an open-world, action-adventure story set in
+              Night City, a megalopolis obsessed with power, glamour, and body
+              modification. You play as V, a mercenary outlaw going after a
+              one-of-a-kind implant that is the key to immortality.
+            </p>
+            <a
+              href="#"
+              class="px-6 py-3 text-white rounded-lg futuristic-button inline-block"
+              >Learn More</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- News Section -->
+      <section class="w-full py-20 px-10 bg-gray-900">
+        <h2 class="text-center mb-10">
+          <span
+            class="big-title glitch-on-hover"
+            data-text="Latest News"
+            >Latest News</span
+          >
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div class="bg-gray-800 rounded-lg p-6 neon-border card-3d">
+            <h3 class="text-xl font-bold mb-3">
+              <span
+                class="glitch-on-hover"
+                data-text="New Update Released"
+                >New Update Released</span
+              >
+            </h3>
+            <p class="text-lg mb-5">
+              The latest update for Cyberpunk 2077 brings new features, bug
+              fixes, and performance improvements.
+            </p>
+            <a href="#" class="text-blue-400 hover:text-blue-300">Read More</a>
+          </div>
+          <div class="bg-gray-800 rounded-lg p-6 neon-border card-3d">
+            <h3 class="text-xl font-bold mb-3">
+              <span
+                class="glitch-on-hover"
+                data-text="Expansion Announced"
+                >Expansion Announced</span
+              >
+            </h3>
+            <p class="text-lg mb-5">
+              A new expansion for Cyberpunk 2077 has been announced, bringing new
+              story content and gameplay features.
+            </p>
+            <a href="#" class="text-blue-400 hover:text-blue-300">Read More</a>
+          </div>
+          <div class="bg-gray-800 rounded-lg p-6 neon-border card-3d">
+            <h3 class="text-xl font-bold mb-3">
+              <span
+                class="glitch-on-hover"
+                data-text="Community Event"
+                >Community Event</span
+              >
+            </h3>
+            <p class="text-lg mb-5">
+              Join the Cyberpunk 2077 community event and win exclusive in-game
+              rewards.
+            </p>
+            <a href="#" class="text-blue-400 hover:text-blue-300">Read More</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Community Section -->
+      <section class="w-full py-20 px-10 bg-black">
+        <h2 class="text-center mb-10">
+          <span
+            class="big-title glitch-on-hover"
+            data-text="Community Highlights"
+            >Community Highlights</span
+          >
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div class="bg-gray-800 rounded-lg p-6 neon-border card-3d">
+            <h3 class="text-xl font-bold mb-3">
+              <span
+                class="glitch-on-hover"
+                data-text="Fan Art"
+                >Fan Art</span
+              >
+            </h3>
+            <p class="text-lg mb-5">
+              Check out the latest fan art created by the Cyberpunk 2077
+              community.
+            </p>
+            <a href="#" class="text-blue-400 hover:text-blue-300">View Gallery</a>
+          </div>
+          <div class="bg-gray-800 rounded-lg p-6 neon-border card-3d">
+            <h3 class="text-xl font-bold mb-3">
+              <span
+                class="glitch-on-hover"
+                data-text="Mods"
+                >Mods</span
+              >
+            </h3>
+            <p class="text-lg mb-5">
+              Explore the best mods created by the community to enhance your
+              Cyberpunk 2077 experience.
+            </p>
+            <a href="#" class="text-blue-400 hover:text-blue-300">Browse Mods</a>
+          </div>
+          <div class="bg-gray-800 rounded-lg p-6 neon-border card-3d">
+            <h3 class="text-xl font-bold mb-3">
+              <span
+                class="glitch-on-hover"
+                data-text="Forums"
+                >Forums</span
+              >
+            </h3>
+            <p class="text-lg mb-5">
+              Join the discussion on the official Cyberpunk 2077 forums.
+            </p>
+            <a href="#" class="text-blue-400 hover:text-blue-300">Visit Forums</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="w-full py-10 px-10 bg-gray-900">
+        <div class="flex justify-between items-center">
+          <img
+            class="w-[160px] mix-blend-screen filter saturate-150 contrast-125"
+            src="https://i.redd.it/3d-rendered-the-cyberpunk-logo-using-blender-v0-khopj82wqee91.png?width=1920&format=png&auto=webp&s=f42dbd8f5c04aedb9ba9291c1ba4d679029cc1f3"
+            alt="Cyberpunk 2077"
+          />
+          <div class="flex gap-5 items-center">
+            <a href="#" class="text-white hover:text-blue-400 glow-on-hover"
+              >Privacy Policy</a
+            >
+            <a href="#" class="text-white hover:text-blue-400 glow-on-hover"
+              >Terms of Service</a
+            >
+            <a href="#" class="text-white hover:text-blue-400 glow-on-hover"
+              >Contact Us</a
+            >
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      // Add blur effect to navbar on scroll
+      const navbar = document.getElementById("navbar");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add("nav-blur");
+        } else {
+          navbar.classList.remove("nav-blur");
+        }
+      });
+    </script>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
